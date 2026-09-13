@@ -1,43 +1,18 @@
-# Website
+# Jim Beebe's Writing Website
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+## Purpose
 
-## Installation
+This website is a showcase of various skills and approaches to technical writing. Here you will find docs-as-code, structured topic-based documents, user-focused tasks, and audience-aware writing.
 
-```bash
-npm install
-```
+## Method
 
-**Note**: feel free to use the package manager of your choice.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator. The documents are written in markdown. Publishing is through Git Pages.
 
-## Local Development
+## Work in Progress
 
-```bash
-npm run start
-```
+This website is a work in progress. You will see development and change over time. Stop back often and check it out! 
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Thanks
 
-## Build
+Thanks for dropping in and taking a look.
 
-```bash
-npm run build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true npm run deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
