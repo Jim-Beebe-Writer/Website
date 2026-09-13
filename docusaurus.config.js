@@ -16,7 +16,13 @@ const config = {
   projectName: 'Website', 
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  
+  // Migrated to markdown.hooks to fix the deprecation warning
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
