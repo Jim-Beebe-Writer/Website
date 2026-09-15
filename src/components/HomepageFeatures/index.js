@@ -32,7 +32,7 @@ const FeatureList = [
         be extended while reusing the same header and footer.
       </>
       ),
-    ),
+    )
   },
 ];
 
