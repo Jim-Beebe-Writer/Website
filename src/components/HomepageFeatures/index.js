@@ -31,8 +31,7 @@ const FeatureList = [
         Extend or customize your website layout by reusing React. Docusaurus can
         be extended while reusing the same header and footer.
       </>
-      ),
-    )
+    ),
   },
 ];
 
