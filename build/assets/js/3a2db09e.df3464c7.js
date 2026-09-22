@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkeasy_to_find||=[]).push([[121],{8070(s){s.exports=JSON.parse('{"tags":[{"label":"Docs-as-code","permalink":"/blog/tags/docs-as-code","count":1},{"label":"docusaurus","permalink":"/blog/tags/docusaurus","count":1}]}')}}]);
