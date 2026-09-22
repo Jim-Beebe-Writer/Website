@@ -4,12 +4,11 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Easy To Work With',
     Svg: require('@site/static/img/favicon.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Jim is well know for being easy to work with. Teams and clients both enjoy his ability to communicate clearly without blame or complaints. 
       </>
     ),
   },
@@ -18,18 +17,18 @@ const FeatureList = [
     Svg: require('@site/static/img/favicon.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Jim helps teams focus on what matters most by providing clear communication and a collaborative approach. He brings deep human experience and wisdom to every project. 
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Highly Technical',
     Svg: require('@site/static/img/favicon.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Jim has a strong background in technical subjects, allowing him to bridge the gap between complex technical concepts and clear communication for diverse audiences. He can work in a variety of technical environments, including software development, engineering, and scientific research.
+      </>
+    ),
       </>
     ),
   },
