@@ -29,8 +29,6 @@ const FeatureList = [
         Jim has a strong background in technical subjects, allowing him to bridge the gap between complex technical concepts and clear communication for diverse audiences. He can work in a variety of technical environments, including software development, engineering, and scientific research.
       </>
     ),
-      </>
-    ),
   },
 ];
 
