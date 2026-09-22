@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.jimbeebewriter.com/blog</id>
+    <title>Jim Beebe, Writer Blog</title>
+    <updated>2026-09-03T20:50:13.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.jimbeebewriter.com/blog"/>
+    <subtitle>Jim Beebe, Writer Blog</subtitle>
+    <icon>https://www.jimbeebewriter.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[A Learning Journey]]></title>
+        <id>https://www.jimbeebewriter.com/blog/new-learning-journet</id>
+        <link href="https://www.jimbeebewriter.com/blog/new-learning-journet"/>
+        <updated>2026-09-03T20:50:13.000Z</updated>
+        <summary type="html"><![CDATA[This blog is a record of my learning journey as I develop new skills in docs-as-code documentation site building.]]></summary>
+        <content type="html"><![CDATA[<p>This blog is a record of my learning journey as I develop new skills in docs-as-code documentation site building.</p>
+<!-- -->
+<p>I have deep skills in documentation - research, interview, experiement, draft, revise polish, and publish in various formats - but now I am learning the ins and outs of automated docs-as-code workflows.</p>]]></content>
+        <author>
+            <name>Jim Beebe</name>
+            <uri>https://linkedin.com/in/jim-beebe-lead-technical-writer</uri>
+        </author>
+        <category label="Docs as Code" term="Docs as Code"/>
+        <category label="Docusaurus" term="Docusaurus"/>
+    </entry>
+</feed>

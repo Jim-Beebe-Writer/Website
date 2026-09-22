@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+
+<task id="changing_plans_in_vms">
+    <title>Changing Plans in VMS</title>
+     <prolog><metadata>
+        <othermeta name="Associated Regulation or Legislation" content="NO"/>
+    </metadata></prolog>
+    <taskbody>
+        <prereq>
+            <p>This procedure uses two VMS windows. You need to know how to switch between open windows in Windows.</p>
+        </prereq>
+<context>
+    <p>In certain circumstances, a member can request a plan change. See <b>Processing Plan Change Guideline On or Off Marketplace</b> for details about when plan changes are allowed.
+</p>
+    
+    <note type="important">Customer Advocates: Do not use this procedure.</note>
+<ul id="advocate_instructions">
+    <li>If an off Exchange member calls requesting a plan change, direct the member to apply for the new plan through the Retail Shopping Cart (RSC).</li>
+    <li>If the member prefers to send in a paper application, direct them to the website for their state (www.bcbsxx.com) to download a paper application.</li>
+    <li>If the member insists that you send a paper application, create a Dashboard Service Request (SR) activity for ICSS (queue UHUENRO).</li>
+</ul>    
+     <note type="important">Processors: Do not use this procedure to change a Texas member's policy. If a plan change request for a Texas policy is accidentally routed to your queue, reroute it to U312344.
+</note>
+    
+    <p>Use this procedure to change an Illinois, Montana, New Mexico, or Oklahoma member's policy in VMS.</p>
+</context>        <steps>
+            <step><cmd>In the VMS menu bar, click the icon for opening a second window, and log into VMS in the second window (Window Two).</cmd>
+                <info>
+                    <note type="note">Throughout the rest of this procedure, the first window -- the one you started in -- is called Window One and the second window -- the one you opened in this step -- is called Window Two.</note>
+                    <note type="important">The procedure will tell you when to switch windows. After you switch to a window, do the following steps in that window until the procedure tells you to switch again.</note>
+                </info>
+            </step>
+            <step><cmd>Switch to Window One.</cmd></step>
+            <step><cmd>In the VMS menu bar, click <uicontrol>Profiles</uicontrol>, and then click <uicontrol>Members</uicontrol>.</cmd></step>
+            <step><cmd>In the Member ID field, type the member's ID number, and then click <uicontrol>Do Search</uicontrol>.</cmd></step>
+            <step><cmd>Click the member ID. The member tree screen opens.</cmd></step>
+            <step><cmd>Switch to Window Two.</cmd></step>
+            <step><cmd>In the VMS menu bar, click <uicontrol>Processing</uicontrol>, and then click <uicontrol>Customer Service</uicontrol>.</cmd></step>
+            <step><cmd>In the <uicontrol>Inquiry Reason</uicontrol> field, select <menucascade><uicontrol>Plan Change (Downgrade)</uicontrol></menucascade>.</cmd>
+                <info><note type="note">Use Plan Change (Downgrade) even if the change is actually an increase in coverage.</note></info>
+            </step>
+            <step><cmd>In the <uicontrol>Entity ID</uicontrol> field, type the member's ID number.</cmd></step>
+            <step><cmd>Click <uicontrol>Accept</uicontrol>. The system displays a list of the matching members.</cmd></step>
+            <step><cmd>In the Matching Members section, click the ID of the member whose plan you are changing. The member tree window opens.</cmd></step>
+            <step><cmd>In the member tree, right-click on the coverage that the member wants to replace.</cmd></step>
+            <step><cmd>In the shortcut menu, click <uicontrol>Cancel</uicontrol>. The Member Termination window opens.</cmd></step>
+            <step><cmd>In the <uicontrol>Termination Date</uicontrol> field, type the date that is one day before the new plan's effective date.</cmd>
+                <info><note type="note">If the plan change is retroactive to the existing plan's effective date, set the <uicontrol>Termination Date</uicontrol> field to the existing plan's effective date.</note></info>
+            </step>
+            <step><cmd>Beside the <uicontrol>Term Reason Code</uicontrol> field, click the magnifying glass icon.</cmd></step>
+            <step><cmd>In the Termination Reasons Search window, click <uicontrol>Do Search</uicontrol>.</cmd></step>
+            <step><cmd>From the <uicontrol>Termination Reasons</uicontrol> list, select a reason for the policy termination.</cmd></step>
+            <step><cmd>Click <uicontrol>Return ID</uicontrol>.</cmd></step>
+            <step><cmd>In the Member Termination window, click <uicontrol>Modify &amp; Exit</uicontrol>.</cmd>
+                <stepresult>The Termination Reasons Search window closes.</stepresult>
+            </step>
+            <step><cmd>Switch to Window One.</cmd></step>
+            <step><cmd>In the <uicontrol>Display InActive?</uicontrol> list, click <uicontrol>Yes</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>Do Search</uicontrol>.</cmd></step>
+            <step><cmd>Right-click on the cancelled policy, and then click <uicontrol>View</uicontrol>.</cmd></step>
+            <step><cmd>Switch to Window Two.</cmd></step>
+            <step><cmd>In the <uicontrol>Display InActive?</uicontrol> field, click <uicontrol>Yes</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>Do Search</uicontrol>.</cmd></step>
+            <step><cmd>In the member tree, right-click on the Line of Business (LOB) that the member wants to add.</cmd></step>
+            <step><cmd>Click <uicontrol>Add</uicontrol>. The Eligibility Coverage Add window opens.</cmd></step>
+            <step><cmd>Perform the following in the Eligibility Coverage Add window:</cmd>
+                <substeps>
+                    <substep><cmd><uicontrol>Effective Date</uicontrol>: Set to the effective date of the new plan.</cmd></substep>
+                    <substep><cmd><uicontrol>Product Effective Date</uicontrol>: Set to the same date as Effective Date.</cmd></substep>
+                    <substep><cmd><uicontrol>LOB</uicontrol>: This autofills to the LOB you right-clicked on in the previous step. If it did not, select the LOB that the member wants to add.</cmd></substep>
+                    <substep><cmd><uicontrol>Original Effective Date</uicontrol>: Set to the same value as on the member's previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Plan Strategy ID</uicontrol>: Enter the Plan Strategy ID for the member's new plan.</cmd>
+                        <info><note type="note">If the new plan's Plan Strategy ID is not specified in the SR activity you are working from, see <b>Plan Strategy ID and Class of Contract Code - Overview</b> for a complete list of plan strategy IDs cross-referenced with plan names and class of contract codes.</note></info>
+                    </substep>
+                    <substep><cmd><uicontrol>Bill Flag</uicontrol>: Set to the same value as on the member's previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Coverage Code</uicontrol>: Set to the same value as on the member's previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>COBRA Flag</uicontrol>: Leave the default No (N).</cmd></substep>
+                    <substep><cmd><uicontrol>COBRA A/R Type</uicontrol>: Leave the default Group (G).</cmd></substep>
+                    <substep><cmd><uicontrol>Manual Enrollment</uicontrol>: Change to Yes.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>Click <uicontrol>Add and Exit</uicontrol>.</cmd></step>
+            <step><cmd>If the member has dependents on the account, a dialog window will appear asking whether you want to set the new coverage in place for all the dependents. Leave the value set to Yes and click <uicontrol>Submit</uicontrol>.</cmd></step>
+            <step><cmd>In the <uicontrol>Display InActive?</uicontrol> field, click <uicontrol>Yes</uicontrol>, and then click <uicontrol>Do Search</uicontrol>.</cmd></step>
+            <step><cmd>Switch to Window One.</cmd></step>
+            <step><cmd>In the Eligibility Coverage View window, click <uicontrol>Exit</uicontrol>.</cmd></step>
+            <step><cmd>In the <uicontrol>Display InActive?</uicontrol> field, click <uicontrol>Yes</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>Do Search</uicontrol>.</cmd></step>
+            <step><cmd>Right-click the member's name.</cmd></step>
+            <step><cmd>Hover over <uicontrol>Drill Down</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>Ancillary Coverage Info</uicontrol>.</cmd></step>
+            <step><cmd>Right-click the terminated Ancillary Coverage Record.</cmd></step>
+            <step><cmd>Click <uicontrol>View</uicontrol>.</cmd></step>
+            <step><cmd>Switch to Window Two.</cmd></step>
+            <step><cmd>Right-click the member's name.</cmd></step>
+            <step><cmd>Hover over <uicontrol>Drill Down</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>Ancillary Coverage Info</uicontrol>.</cmd></step>
+            <step><cmd>Right-click <uicontrol>Ancillary Coverage Records</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>Add</uicontrol>. The Coverage Ancillary Add screen displays.</cmd></step>
+            <step><cmd>In the Coverage Ancillary Add screen, perform the following:</cmd>
+                <substeps>
+                    <substep><cmd><uicontrol>LOB</uicontrol>: Click the appropriate LOB from the list.</cmd></substep>
+                    <substep><cmd><uicontrol>Effective Date</uicontrol>: Type the coverage effective date.</cmd></substep>
+                    <substep><cmd>Termination Date Required Type 12/31/9999.</cmd></substep>
+                    <substep><cmd><uicontrol>Case Number</uicontrol>: Type the member's ID number followed by the current date in the format ymmdd. For example, if you are working with member number 887766554, and you are making a plan change on February 25, 2024, you would use 88776655440225.</cmd></substep>
+                    <substep><cmd><uicontrol>Claims Investigation</uicontrol>: Leave blank.</cmd></substep>
+                    <substep><cmd><uicontrol>Pre Existing End Date</uicontrol>: Leave blank.</cmd></substep>
+                    <substep><cmd><uicontrol>Application Received Date</uicontrol>: Type the date on which the request to change the plan was received.</cmd></substep>
+                    <substep><cmd><uicontrol>Application Signature</uicontrol>: Type the date on which the request to change the plan was received.</cmd></substep>
+                    <substep><cmd><uicontrol>Member Issue Date</uicontrol>: Type today's date (mm/dd/yyyy).</cmd></substep>
+                    <substep><cmd><uicontrol>Conversion Switch Date</uicontrol>: Leave blank</cmd></substep>
+                    <substep><cmd><uicontrol>Control Number</uicontrol>: Leave blank.</cmd></substep>
+                    <substep><cmd><uicontrol>Application Type</uicontrol>: Click <uicontrol>New (N)</uicontrol>.</cmd></substep>
+                    <substep><cmd><uicontrol>External Business</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Source Type</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>External Ref#</uicontrol>: If the <uicontrol>External Business</uicontrol> field is marked Yes, this field must be completed. Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Proxy Sign Ind</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Proxy Sign Date</uicontrol>: If the <uicontrol>Proxy Sign Ind</uicontrol> field is marked Yes, this field must be completed. Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Market Type</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Variant Code</uicontrol>: Click the Variant Code that corresponds to the last two digits of the Class of Contract Code. See the table in the Note.</cmd>
+                        <info>
+                            <note type="note">If the new plan's Class of Contract Code is not specified in the SR activity you are working from, see RMO Plan Strategy ID and Class of Contract Code - Overview for a complete list of plan strategy IDs cross-referenced with plan names and class of contract codes.</note>
+                            <table>
+                                <tgroup cols="2">
+                                    <thead>
+                                        <row>
+                                            <entry align="center"><ph outputclass="bold">Last Two Digits of Class of Contract Code</ph></entry>
+                                            <entry align="center"><ph outputclass="bold">Variant Code</ph></entry>
+                                        </row>
+                                    </thead>
+                                    <tbody>
+                                        <row>
+                                            <entry>00</entry>
+                                            <entry>Non-Exchange variant</entry>
+                                        </row>
+                                        <row>
+                                            <entry>01</entry>
+                                            <entry>Exchange variant (no CSR)</entry>
+                                        </row>
+                                        <row>
+                                            <entry>02</entry>
+                                            <entry>Open to Indians below 300% FPL</entry>
+                                        </row>
+                                        <row>
+                                            <entry>03</entry>
+                                            <entry>Open to Indians above 300% FPL</entry>
+                                        </row>
+                                        <row>
+                                            <entry>04</entry>
+                                            <entry>73% AV Level Silver Plan CSR</entry>
+                                        </row>
+                                        <row>
+                                            <entry>05</entry>
+                                            <entry>87% AV Level Silver Plan CSR</entry>
+                                        </row>
+                                        <row>
+                                            <entry>06</entry>
+                                            <entry>94% AV Level Silver Plan CSR</entry>
+                                        </row>
+                                    </tbody>
+                                </tgroup>
+                            </table>
+                        </info>
+                    </substep>
+                    <substep><cmd><uicontrol>Class of Contract Code</uicontrol>: Enter the 16 digit Class of Contract Code for the new plan.</cmd></substep>
+                    <substep><cmd><uicontrol>Other Dental QHP</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>QHP Sign Date</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Carrier</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Disability Affecting Communication</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Communication Materials Needed</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                    <substep><cmd><uicontrol>Policy Should be Mailed</uicontrol>: Copy the value from the previous coverage. Switch to Window One to see that.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>Click <uicontrol>Add and Exit</uicontrol>.</cmd></step>
+            <step><cmd>In the <uicontrol>Display InActive?</uicontrol> field, click <uicontrol>Yes</uicontrol>, and then click <uicontrol>Do Search</uicontrol>. The member record displays.</cmd></step>
+            <step><cmd>For each dependent on the policy, repeat steps 35 (right-clicking on the dependent's name) through 50.</cmd></step>
+            <step><cmd>Right-click on the member's name.</cmd></step>
+            <step><cmd>Hover over <uicontrol>Drill Down</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>Ancillary Rate Info</uicontrol>. The Ancillary Rate Records displays.</cmd></step>
+            <step><cmd>Verify that there is an active ancillary rate record.</cmd>
+                <info><note type="note">If there is not an Ancillary Rate Record, send an email to the Retail Market Operations - Rate Administration mailbox with the member's ID and which LOB needs an Ancillary Rate Record.</note></info>
+            </step>
+            <step><cmd>In the <uicontrol>Display InActive?</uicontrol> field, click <uicontrol>Yes</uicontrol>, and then click <uicontrol>Do Search</uicontrol>.</cmd></step>
+            <step><cmd>For each dependent on the policy, repeat steps 52 (right-clicking on the dependent's name) through 56.</cmd></step>
+            <step><cmd>Right-click the member's name.</cmd></step>
+            <step><cmd>Hover over <uicontrol>Drill Down</uicontrol>.</cmd></step>
+            <step><cmd>Click <uicontrol>All Details</uicontrol>.</cmd></step>
+            <step><cmd>Reinstate the funding assignment:</cmd>
+                <substeps>
+                    <substep><cmd>Under Member Funding Assignments, find the funding assignment that was terminated when you cancelled the previous coverage. (It has a <uicontrol>Thru date</uicontrol> of today.)</cmd></substep>
+                    <substep><cmd>Right-click the funding assignment you identified in the previous sub-step, and then click <uicontrol>Modify</uicontrol>.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Termination Date</uicontrol> field, type 12/31/9999.</cmd></substep>
+                    <substep><cmd>Click <uicontrol>Modify &amp; Exit</uicontrol>.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>Reinstate the subsidy (if there is one):</cmd>
+                <substeps>
+                    <substep><cmd>Under Subsidy Maintenance, look for a subsidy record that was terminated when you cancelled the previous coverage. (It has an ending date of today.) If you do not find one, skip the rest of these sub-steps and go to step 63.</cmd></substep>
+                    <substep><cmd>Right-click the subsidy record you identified in the previous sub-step, and then click <uicontrol>Modify</uicontrol>.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Subsidy Termination Date</uicontrol> field, type 12/31/9999.</cmd></substep>
+                    <substep><cmd>Click <uicontrol>Modify &amp; Exit</uicontrol>.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>Reinstate brokers (if any):</cmd>
+                <substeps>
+                    <substep><cmd>Under Broker Assignments, look for one or more brokers who were terminated when you cancelled the previous coverage. (They have a to date of today.) If you do not find one, skip the rest of these sub-steps and go to step 64.</cmd></substep>
+                    <substep><cmd>For each broker you identified in the previous sub-step, right-click the broker record, and then click <uicontrol>Modify</uicontrol>.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Termination Date</uicontrol> field, type 12/31/9999.</cmd></substep>
+                    <substep><cmd>Click <uicontrol>Modify &amp; Exit</uicontrol>.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>In the Member Search panel, click <uicontrol>Close All</uicontrol>.</cmd>
+                <info><note type="note">In the dialog that appears, click <uicontrol>No</uicontrol>.</note></info>
+            </step>
+            <step><cmd>Request a new Policy Kit for the member.</cmd>
+                <substeps>
+                    <substep><cmd>Click the ID card icon in the member's row of the Matching Members list.</cmd></substep>
+                    <substep><cmd>Complete the request window as shown in the table below.</cmd>
+                        <info>
+                            <table>
+                                <tgroup cols="2">
+                                    <thead>
+                                        <row>
+                                            <entry align="center"><ph outputclass="bold">Field</ph></entry>
+                                            <entry align="center"><ph outputclass="bold">Action</ph></entry>
+                                        </row>
+                                    </thead>
+                                    <tbody>
+                                        <row>
+                                            <entry>Request For</entry>
+                                            <entry>Leave set to Member</entry>
+                                        </row>
+                                        <row>
+                                            <entry>ID#</entry>
+                                            <entry>Leave set to the member's ID number.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Members</entry>
+                                            <entry>Leave set to the Primary Insured.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Group ID</entry>
+                                            <entry>Leave set to the member's Group ID.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Type (drop-down list)</entry>
+                                            <entry>Click Plan Change/Initial Kit (4).</entry>
+                                        </row>
+                                        <row>
+                                            <entry># of Items</entry>
+                                            <entry>Type 1.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Provider Effective Date (HMO only)</entry>
+                                            <entry>If available, select the latest provider effective date.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Case Number</entry>
+                                            <entry>Select the case number of the new coverage.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Address Source</entry>
+                                            <entry>Leave set to the Primary Insured's Mailing address.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Order For</entry>
+                                            <entry>Leave set to M-Member Only.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Name(s) on Card</entry>
+                                            <entry>Leave set to M-Member Only (No cards are sent with the Policy Kit.)</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Card Coverage Date (drop-down list)</entry>
+                                            <entry>Click the effective date of the active coverage. (No cards are sent with the Policy Kit.)</entry>
+                                        </row>
+                                        <row>
+                                            <entry>If No Address Then Send to</entry>
+                                            <entry>Leave blank.</entry>
+                                        </row>
+                                        <row>
+                                            <entry>Card Format</entry>
+                                            <entry>Leave set to Blue Cross Blue Shield. (No cards are sent with the Policy Kit.)</entry>
+                                        </row>
+                                        <row>
+                                            <entry><ph outputclass="bold">Request will be sent to</ph> fields</entry>
+                                            <entry>If not automatically populated, type the name and address information for where the kit will be sent.</entry>
+                                        </row>
+                                    </tbody>
+                                </tgroup>
+                            </table>
+                            <note type="note">Do not type anything in the <uicontrol>Message</uicontrol> field. That field is for system messages to you; information you type there is not saved or sent to anyone.</note>
+                        </info>
+                    </substep>
+                    <substep><cmd>Click <uicontrol>Accept &amp; Order</uicontrol>.</cmd></substep>
+                    <substep><cmd>Close the request window.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>Click the left-most set of double yellow arrows (&gt;&gt;). The Customer Service inquiry panel opens.</cmd></step>
+            <step><cmd>Click <uicontrol>Finish Inquiry</uicontrol>. The CS Inquiry Completion window appears.</cmd></step>
+            <step><cmd>Click <uicontrol>Closed on First Contact</uicontrol>.</cmd></step>
+            <step><cmd>Select <uicontrol>Send to Subscriber</uicontrol>.</cmd></step>
+            <step><cmd>Click the box beside the member ID of the subscriber.</cmd></step>
+            <step><cmd>In the <uicontrol>Comment</uicontrol> field, enter the number of the SR that was opened for the request.</cmd></step>
+            <step><cmd>Follow the RMO Workaround Creating Free Form Correspondence in CUI procedure to create and send a confirmation letter to the member.</cmd></step>
+            <step><cmd>Follow the RMO Requesting ID Cards in VUI procedure to order new ID cards for the member.</cmd></step>
+            <step><cmd>If the plan change was retroactive, send an activity to Claims telling them to check for claims that need adjusting as a result of the plan change.</cmd>
+                <substeps>
+                    <substep><cmd>In the SR opened for this transaction, create a new activity.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Comments</uicontrol> field of the activity, type “Re-examine claims due to plan change”, the member's ID number, and the effective date of the new plan.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Activity Code 1</uicontrol> field, type PLC.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Employee ID</uicontrol> field, type UHUBENP.</cmd></substep>
+                    <substep><cmd>Click <uicontrol>Save</uicontrol>.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>If the plan change was retroactive, send an activity to FinOps telling them to reinvoice the member.</cmd>
+                <substeps>
+                    <substep><cmd>In the SR opened for this transaction, create a new activity.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Comments</uicontrol> field of the activity, type “Reinvoice due to plan change”, the member's ID number, and the effective date of the new plan.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Activity Code 1</uicontrol> field, type PLC.</cmd></substep>
+                    <substep><cmd>In the <uicontrol>Employee ID</uicontrol> field, type UFINOPS.</cmd></substep>
+                    <substep><cmd>Click <uicontrol>Save</uicontrol>.</cmd></substep>
+                </substeps>
+            </step>
+            <step><cmd>In the SR opened for this transaction, in the activity directing the plan change, set the activity's status to <uicontrol>Done</uicontrol>.</cmd></step>
+        </steps>
+	<postreq>
+            <p>For further assistance, review the following guidelines and FAQs.</p>
+		<ul><li><b>QHP Plan Strategy ID and Class of Contract Code - Overview</b></li>
+		<li><b>Processing Plan Change Guideline for On or Off the Marketplace</b></li></ul>
+        </postreq>
+    </taskbody>
+</task>

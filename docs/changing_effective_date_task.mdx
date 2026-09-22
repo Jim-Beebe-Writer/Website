@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="changing_effective_date" xml:lang="en-us">
+  <title>Changing Effective Date in VMS (Moving Date Forward in Time)</title>
+  <shortdesc>Procedure for Processors to change a member's policy effective date to a later date in the Vantage Membership Service (VMS).</shortdesc>
+  <taskbody>
+    <prereq>
+      <p>Effective dates must be the first of the month.</p>
+    </prereq>
+    <context>
+      <note type="important">Customer Advocates (CAs) must refer to the RMO Workaround Pending Member Inquiries for On Off Marketplace procedure instead of using the steps below.</note>
+      <p>Use these steps to change a member's effective date to a later date in VMS.</p>
+    </context>
+    <steps>
+      <step><cmd>Open the Customer Service Inquiry panel.</cmd>
+        <info>In the VMS menu bar, click Processing &gt; Customer Service. Select 'Effective Date change' as the Inquiry Reason and enter the member's ID.</info>
+      </step>
+      <step><cmd>Change the effective date for the Primary Insured and all Dependents.</cmd>
+        <substeps>
+          <substep><cmd>Modify the Eligibility Coverage (medical and dental) effective date to the new date. This includes the Effective Date, Product Effective Date, and Original Effective Date (if applicable).</cmd></substep>
+          <substep><cmd>Modify the Ancillary Coverage Info effective date to the new date.</cmd></substep>
+        </substeps>
+      </step>
+      <step><cmd>Update the effective dates for related records.</cmd>
+        <substeps>
+          <substep><cmd>Modify the policy Broker Assignment effective date.</cmd></substep>
+          <substep><cmd>Modify the active Funding Assignments effective date.</cmd></substep>
+          <substep><cmd>Modify the Contacts effective date.</cmd></substep>
+          <substep><cmd>Modify the Subsidy Maintenance effective date (if a record exists).</cmd></substep>
+        </substeps>
+      </step>
+      <step><cmd>Request new ID cards for non-HMO members.</cmd>
+        <info>HMO member ID cards will be automatically generated after the PCP is updated.</info>
+      </step>
+      <step><cmd>Finish the Customer Service Inquiry and send a confirmation letter.</cmd>
+        <info>Click 'Finish Inquiry', select 'Closed on First Contact', and follow the RMO Workaround Creating Free Form Correspondence in CUI procedure.</info>
+      </step>
+      <step><cmd>If an HMO policy, update the effective date on the member's providers using the RMO Changing a Provider procedure.</cmd></step>
+    </steps>
+    <result>The member's policy effective date is successfully moved forward in VMS across all relevant coverage and assignment records.</result>
+  </taskbody>
+</task>
