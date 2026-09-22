@@ -11,6 +11,9 @@ const config = {
   url: 'https://www.jimbeebewriter.com',
   baseUrl: '/',
 
+  // Explicit trailingSlash setting to resolve GitHub Pages deployment warning
+  trailingSlash: false,
+
   // GitHub pages deployment config.
   organizationName: 'Jim-Beebe-Writer', 
   projectName: 'Website', 
