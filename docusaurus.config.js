@@ -11,6 +11,9 @@ const config = {
   url: 'https://www.jimbeebewriter.com',
   baseUrl: '/',
 
+  // Explicit trailingSlash setting to resolve GitHub Pages deployment warning
+  trailingSlash: false,
+
   // GitHub pages deployment config.
   organizationName: 'Jim-Beebe-Writer', 
   projectName: 'Website', 
@@ -36,11 +39,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/Jim-Beebe-Writer/Website/tree/main/',
+          // editUrl: 'https://github.com/Jim-Beebe-Writer/Website/tree/main/',
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/Jim-Beebe-Writer/Website/tree/main/',
+          // editUrl: 'https://github.com/Jim-Beebe-Writer/Website/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
