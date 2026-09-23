@@ -1,9 +1,0 @@
-Docs-as-code:
-  label: Docs as Code
-  permalink: /tags/docs-as-code
-  description: Articles and insights on treating documentation like software code.
-
-docusaurus:
-  label: Docusaurus
-  permalink: /tags/docusaurus
-  description: Tips, configurations, and tutorials for building sites with Docusaurus.
