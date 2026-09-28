@@ -1,0 +1,21 @@
+name: Vale
+
+on:
+  pull_request:
+    paths:
+      - "**.md"
+      - "**.mdx"
+      - ".vale.ini"
+      - ".vale/**"
+
+jobs:
+  prose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: errata-ai/vale-action@reviewdog
+        with:
+          version: 3.9.1
+          files: docs
+          fail_on_error: true
+          reporter: github-pr-review
