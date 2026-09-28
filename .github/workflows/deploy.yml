@@ -41,7 +41,7 @@ jobs:
         run: npm ci
 
       - name: Sync Vale Styles
-        run: npx vale sync # or 'vale sync' directly
+        run: vale sync 
 
       - name: Run Vale Linter
         run: npm run lint
