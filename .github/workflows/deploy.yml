@@ -21,15 +21,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+  
       - name: Setup Vale
         uses: vale-cli/vale-action@v3
         with:
-          # Tell the action only to install Vale, allowing npm to trigger it
           onlyWithChangedFiles: false
         env:
-          # Optional: avoids GitHub API rate-limiting when syncing styles
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync Vale styles
+        run: vale sync
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -39,9 +40,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Sync Vale Styles
-        run: npm install -g vale && vale sync
 
       - name: Run Vale Linter
         run: npm run lint
