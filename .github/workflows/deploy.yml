@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Vale
-        uses: errata-ai/vale-action@v2
+        uses: vale-cli/vale-action@v3
         with:
           # Tell the action only to install Vale, allowing npm to trigger it
           onlyWithChangedFiles: false
