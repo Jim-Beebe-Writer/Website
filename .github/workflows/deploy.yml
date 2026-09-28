@@ -16,11 +16,20 @@ concurrency:
 
 jobs:
   lint:
-    name: Code Quality (Lint)
+    name: Lint Documentation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Setup Vale
+        uses: errata-ai/vale-action@v2
+        with:
+          # Tell the action only to install Vale, allowing npm to trigger it
+          onlyWithChangedFiles: false
+        env:
+          # Optional: avoids GitHub API rate-limiting when syncing styles
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,8 +40,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Linter
-        run: npm run lint 
+      - name: Sync Vale Styles
+        run: npx vale sync # or 'vale sync' directly
+
+      - name: Run Vale Linter
+        run: npm run lint
   build:
     needs: lint
     runs-on: ubuntu-latest
