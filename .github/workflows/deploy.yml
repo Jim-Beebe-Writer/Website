@@ -24,13 +24,8 @@ jobs:
   
       - name: Setup Vale
         uses: vale-cli/vale-action@v3
-        with:
-          onlyWithChangedFiles: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Sync Vale styles
-        run: vale sync
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -43,6 +38,7 @@ jobs:
 
       - name: Run Vale Linter
         run: npm run lint
+
   build:
     needs: lint
     runs-on: ubuntu-latest
