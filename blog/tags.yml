@@ -7,3 +7,8 @@ docusaurus:
   label: Docusaurus
   permalink: /tags/docusaurus
   description: Tips, configurations, and tutorials for building sites with Docusaurus.
+
+Vale:
+  label: Vale
+  permalink: /tags/Vale
+  description: Discussions of style linting with Vale.

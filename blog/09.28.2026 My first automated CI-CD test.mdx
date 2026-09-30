@@ -1,0 +1,25 @@
+---
+slug: First-linting-running
+title: I have Vale running
+authors: [jbeebe]
+tags: [Docs-as-code, Vale]
+---
+
+# My first automated CI/CD test #
+I have Vale running in my CI/CD pipeline now. 
+
+{/* Truncate */}
+
+After a lot of tinkering and adjusting settings, I have Vale running without errors. I had problems:
+
+1. I had to learn about fitting Vale into the structure for my deploy.yml file for GitHub.   
+1. I had to update references to deprecated versions of actions used in the sources I learned from.  
+1. I had to solve the errors that Vale found in my documents. 
+
+I expected the first problem. That is the point of this project, to learn new skills and demonstrate them. 
+
+The second problem was an “unknown unknown.” I became aware of it when my linting jobs failed on deprecated versions (especially of [Node.js](http://Node.js) version 20). Figuring out what was happening and why was a multi-step process; I first had to figure out which actions were calling a specific version of Node, then I had to find all the instances of those actions and update their references to call their latest versions. 
+
+The third problem was fully my own fault. I'd run Vale locally and seen the number of warnings it generated, mostly over reading levels. I decided to leave those issues unsolved so I could see them in the GitHub output. Unfortunately, I exceeded GutHub’s logging limits, generating an error. 
+
+With all those problems solved, I now have a CI/CD pipeline with style checking built in. My next steps are to add spell checking and checking for well-formed Markdown.  
