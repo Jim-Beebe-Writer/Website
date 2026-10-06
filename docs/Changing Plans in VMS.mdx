@@ -1,0 +1,196 @@
+# Changing Plans in VMS
+## Prerequisites
+This procedure uses two VMS windows. You need to know how to switch between open windows in Windows.
+-----
+## Context
+In certain circumstances, a member can request a plan change. See **Processing Plan Change Guideline On or Off Marketplace** for details about when plan changes are allowed.
+**Important (Customer Advocates):** Do not use this procedure.
+  - If an off Exchange member calls requesting a plan change, direct the member to apply for the new plan through the Retail Shopping Cart (RSC).
+  - If the member prefers to send in a paper application, direct them to the website for their state (www.bcbsxx.com) to download a paper application.
+  - If the member insists that you send a paper application, create a Dashboard Service Request (SR) activity for ICSS (queue UHUENRO).
+**Important (Processors):** Do not use this procedure to change a Texas member's policy. If a plan change request for a Texas policy is accidentally routed to your queue, reroute it to U312344.
+Use this procedure to change an Illinois, Montana, New Mexico, or Oklahoma member's policy in VMS.
+-----
+## Steps
+1.  In the VMS menu bar, click the icon for opening a second window, and log into VMS in the second window (Window Two).
+    1.  **Note:** Throughout the rest of this procedure, the first window -- the one you started in -- is called Window One and the second window -- the one you opened in this step -- is called Window Two.
+    2.  **Important:** The procedure will tell you when to switch windows. After you switch to a window, do the following steps in that window until the procedure tells you to switch again.
+2.  Switch to Window One.
+3.  In the VMS menu bar, click **Profiles**, and then click **Members**.
+4.  In the Member ID field, type the member's ID number, and then click **Do Search**.
+5.  Click the member ID. The member tree screen opens.
+6.  Switch to Window Two.
+7.  In the VMS menu bar, click **Processing**, and then click **Customer Service**.
+8.  In the **Inquiry Reason** field, select **Plan Change (Downgrade)**.
+    1.  **Note:** Use Plan Change (Downgrade) even if the change is actually an increase in coverage.
+9.  In the **Entity ID** field, type the member's ID number.
+10. Click **Accept**. The system displays a list of the matching members.
+11. In the Matching Members section, click the ID of the member whose plan you are changing. The member tree window opens.
+12. In the member tree, right-click on the coverage that the member wants to replace.
+13. In the shortcut menu, click **Cancel**. The Member Termination window opens.
+14. In the **Termination Date** field, type the date that is one day before the new plan's effective date.
+    1.  **Note:** If the plan change is retroactive to the existing plan's effective date, set the **Termination Date** field to the existing plan's effective date.
+15. Beside the **Term Reason Code** field, click the magnifying glass icon.
+16. In the Termination Reasons Search window, click **Do Search**.
+17. From the **Termination Reasons** list, select a reason for the policy termination.
+18. Click **Return ID**.
+19. In the Member Termination window, click **Modify & Exit**.
+    1.  **Result:** The Termination Reasons Search window closes.
+20. Switch to Window One.
+21. In the **Display InActive?** list, click **Yes**.
+22. Click **Do Search**.
+23. Right-click on the cancelled policy, and then click **View**.
+24. Switch to Window Two.
+25. In the **Display InActive?** field, click **Yes**.
+26. Click **Do Search**.
+27. In the member tree, right-click on the Line of Business (LOB) that the member wants to add.
+28. Click **Add**. The Eligibility Coverage Add window opens.
+29. Perform the following in the Eligibility Coverage Add window:
+    1.  **Effective Date**: Set to the effective date of the new plan.
+    2.  **Product Effective Date**: Set to the same date as Effective Date.
+    3.  **LOB**: This autofills to the LOB you right-clicked on in the previous step. If it did not, select the LOB that the member wants to add.
+    4.  **Original Effective Date**: Set to the same value as on the member's previous coverage. Switch to Window One to see that.
+    5.  **Plan Strategy ID**: Enter the Plan Strategy ID for the member's new plan.
+        1.  **Note:** If the new plan's Plan Strategy ID is not specified in the SR activity you are working from, see **Plan Strategy ID and Class of Contract Code - Overview** for a complete list of plan strategy IDs cross-referenced with plan names and class of contract codes.
+    6.  **Bill Flag**: Set to the same value as on the member's previous coverage. Switch to Window One to see that.
+    7.  **Coverage Code**: Set to the same value as on the member's previous coverage. Switch to Window One to see that.
+    8.  **COBRA Flag**: Leave the default No (N).
+    9.  **COBRA A/R Type**: Leave the default Group (G).
+    10. **Manual Enrollment**: Change to Yes.
+30. Click **Add and Exit**.
+31. If the member has dependents on the account, a dialog window will appear asking whether you want to set the new coverage in place for all the dependents. Leave the value set to Yes and click **Submit**.
+32. In the **Display InActive?** field, click **Yes**, and then click **Do Search**.
+33. Switch to Window One.
+34. In the Eligibility Coverage View window, click **Exit**.
+35. In the **Display InActive?** field, click **Yes**.
+36. Click **Do Search**.
+37. Right-click the member's name.
+38. Hover over **Drill Down**.
+39. Click **Ancillary Coverage Info**.
+40. Right-click the terminated Ancillary Coverage Record.
+41. Click **View**.
+42. Switch to Window Two.
+43. Right-click the member's name.
+44. Hover over **Drill Down**.
+45. Click **Ancillary Coverage Info**.
+46. Right-click **Ancillary Coverage Records**.
+47. Click **Add**. The Coverage Ancillary Add screen displays.
+48. In the Coverage Ancillary Add screen, perform the following:
+    1.  **LOB**: Click the appropriate LOB from the list.
+    2.  **Effective Date**: Type the coverage effective date.
+    3.  **Termination Date**: Required Type 12/31/9999.
+    4.  **Case Number**: Type the member's ID number followed by the current date in the format ymmdd. For example, if you are working with member number 887766554, and you are making a plan change on February 25, 2024, you would use 88776655440225.
+    5.  **Claims Investigation**: Leave blank.
+    6.  **Pre Existing End Date**: Leave blank.
+    7.  **Application Received Date**: Type the date on which the request to change the plan was received.
+    8.  **Application Signature**: Type the date on which the request to change the plan was received.
+    9.  **Member Issue Date**: Type today's date (mm/dd/yyyy).
+    10. **Conversion Switch Date**: Leave blank.
+    11. **Control Number**: Leave blank.
+    12. **Application Type**: Click **New (N)**.
+    13. **External Business**: Copy the value from the previous coverage. Switch to Window One to see that.
+    14. **Source Type**: Copy the value from the previous coverage. Switch to Window One to see that.
+    15. **External Ref\#**: If the **External Business** field is marked Yes, this field must be completed. Copy the value from the previous coverage. Switch to Window One to see that.
+    16. **Proxy Sign Ind**: Copy the value from the previous coverage. Switch to Window One to see that.
+    17. **Proxy Sign Date**: If the **Proxy Sign Ind** field is marked Yes, this field must be completed. Copy the value from the previous coverage. Switch to Window One to see that.
+    18. **Market Type**: Copy the value from the previous coverage. Switch to Window One to see that.
+    19. **Variant Code**: Click the Variant Code that corresponds to the last two digits of the Class of Contract Code. See the table in the Note below:
+        1.  **Note:** If the new plan's Class of Contract Code is not specified in the SR activity you are working from, see RMO Plan Strategy ID and Class of Contract Code - Overview for a complete list of plan strategy IDs cross-referenced with plan names and class of contract codes.
+| Last Two Digits of Class of Contract Code | Variant Code |
+| :--- | :--- |
+| 00 | Non-Exchange variant |
+| 01 | Exchange variant (no CSR) |
+| 02 | Open to Indians below 300% FPL |
+| 03 | Open to Indians above 300% FPL |
+| 04 | 73% AV Level Silver Plan CSR |
+| 05 | 87% AV Level Silver Plan CSR |
+| 06 | 94% AV Level Silver Plan CSR |
+
+1.  **Class of Contract Code**: Enter the 16 digit Class of Contract Code for the new plan.
+2.  **Other Dental QHP**: Copy the value from the previous coverage. Switch to Window One to see that.
+3.  **QHP Sign Date**: Copy the value from the previous coverage. Switch to Window One to see that.
+4.  **Carrier**: Copy the value from the previous coverage. Switch to Window One to see that.
+5.  **Disability Affecting Communication**: Copy the value from the previous coverage. Switch to Window One to see that.
+6.  **Communication Materials Needed**: Copy the value from the previous coverage. Switch to Window One to see that.
+7.  **Policy Should be Mailed**: Copy the value from the previous coverage. Switch to Window One to see that.
+1.  Click **Add and Exit**.
+2.  In the **Display InActive?** field, click **Yes**, and then click **Do Search**. The member record displays.
+3.  For each dependent on the policy, repeat steps 35 (right-clicking on the dependent's name) through 50.
+4.  Right-click on the member's name.
+5.  Hover over **Drill Down**.
+6.  Click **Ancillary Rate Info**. The Ancillary Rate Records displays.
+7.  Verify that there is an active ancillary rate record.
+    1.  **Note:** If there is not an Ancillary Rate Record, send an email to the Retail Market Operations - Rate Administration mailbox with the member's ID and which LOB needs an Ancillary Rate Record.
+8.  In the **Display InActive?** field, click **Yes**, and then click **Do Search**.
+9.  For each dependent on the policy, repeat steps 52 (right-clicking on the dependent's name) through 56.
+10. Right-click the member's name.
+11. Hover over **Drill Down**.
+12. Click **All Details**.
+13. Reinstate the funding assignment:
+    1.  Under Member Funding Assignments, find the funding assignment that was terminated when you cancelled the previous coverage. (It has a **Thru date** of today.)
+    2.  Right-click the funding assignment you identified in the previous sub-step, and then click **Modify**.
+    3.  In the **Termination Date** field, type 12/31/9999.
+    4.  Click **Modify & Exit**.
+14. Reinstate the subsidy (if there is one):
+    1.  Under Subsidy Maintenance, look for a subsidy record that was terminated when you cancelled the previous coverage. (It has an ending date of today.) If you do not find one, skip the rest of these sub-steps and go to step 63.
+    2.  Right-click the subsidy record you identified in the previous sub-step, and then click **Modify**.
+    3.  In the **Subsidy Termination Date** field, type 12/31/9999.
+    4.  Click **Modify & Exit**.
+15. Reinstate brokers (if any):
+    1.  Under Broker Assignments, look for one or more brokers who were terminated when you cancelled the previous coverage. (They have a to date of today.) If you do not find one, skip the rest of these sub-steps and go to step 64.
+    2.  For each broker you identified in the previous sub-step, right-click the broker record, and then click **Modify**.
+    3.  In the **Termination Date** field, type 12/31/9999.
+    4.  Click **Modify & Exit**.
+16. In the Member Search panel, click **Close All**.
+    1.  **Note:** In the dialog that appears, click **No**.
+17. Request a new Policy Kit for the member:
+    1.  Click the ID card icon in the member's row of the Matching Members list.
+    2.  Complete the request window as shown in the table below:
+
+| Field | Action |
+| :--- | :--- |
+| Request For | Leave set to Member |
+| ID\# | Leave set to the member's ID number. |
+| Members | Leave set to the Primary Insured. |
+| Group ID | Leave set to the member's Group ID. |
+| Type (drop-down list) | Click Plan Change/Initial Kit (4). |
+| \# of Items | Type 1. |
+| Provider Effective Date (HMO only) | If available, select the latest provider effective date. |
+| Case Number | Select the case number of the new coverage. |
+| Address Source | Leave set to the Primary Insured's Mailing address. |
+| Order For | Leave set to M-Member Only. |
+| Name(s) on Card | Leave set to M-Member Only (No cards are sent with the Policy Kit.) |
+| Card Coverage Date (drop-down list) | Click the effective date of the active coverage. (No cards are sent with the Policy Kit.) |
+| If No Address Then Send to | Leave blank. |
+| Card Format | Leave set to Blue Cross Blue Shield. (No cards are sent with the Policy Kit.) |
+| **Request will be sent to** fields | If not automatically populated, type the name and address information for where the kit will be sent. |
+
+1.  **Note:** Do not type anything in the **Message** field. That field is for system messages to you; information you type there is not saved or sent to anyone.
+1.  Click **Accept & Order**.
+2.  Close the request window.
+1.  Click the left-most set of double yellow arrows (\>\>). The Customer Service inquiry panel opens.
+2.  Click **Finish Inquiry**. The CS Inquiry Completion window appears.
+3.  Click **Closed on First Contact**.
+4.  Select **Send to Subscriber**.
+5.  Click the box beside the member ID of the subscriber.
+6.  In the **Comment** field, enter the number of the SR that was opened for the request.
+7.  Follow the RMO Workaround Creating Free Form Correspondence in CUI procedure to create and send a confirmation letter to the member.
+8.  Follow the RMO Requesting ID Cards in VUI procedure to order new ID cards for the member.
+9.  If the plan change was retroactive, send an activity to Claims telling them to check for claims that need adjusting as a result of the plan change:
+    1.  In the SR opened for this transaction, create a new activity.
+    2.  In the **Comments** field of the activity, type “Re-examine claims due to plan change”, the member's ID number, and the effective date of the new plan.
+    3.  In the **Activity Code 1** field, type PLC.
+    4.  In the **Employee ID** field, type UHUBENP.
+    5.  Click **Save**.
+10. If the plan change was retroactive, send an activity to FinOps telling them to reinvoice the member:
+    1.  In the SR opened for this transaction, create a new activity.
+    2.  In the **Comments** field of the activity, type “Reinvoice due to plan change”, the member's ID number, and the effective date of the new plan.
+    3.  In the **Activity Code 1** field, type PLC.
+    4.  In the **Employee ID** field, type UFINOPS.
+    5.  Click **Save**.
+11. In the SR opened for this transaction, in the activity directing the plan change, set the activity's status to **Done**.
+-----
+## Post-requisites & Additional Guidelines
+For further assistance, review the following guidelines and FAQs:
+  - **QHP Plan Strategy ID and Class of Contract Code - Overview**
+**Processing Plan Change Guideline for On or Off the Marketplace**
