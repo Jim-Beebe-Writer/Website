@@ -69,7 +69,7 @@ const config = {
             position: 'left',
             label: 'Portfolio',
           },
-          {to: '/blog', label: 'Articles', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/Jim-Beebe-Writer',
             label: 'GitHub',

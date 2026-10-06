@@ -22,6 +22,11 @@ function HomepageHeader() {
             to="/docs/intro">
             Portfolio
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/blog">
+            Blog
+          </Link>
         </div>
       </div>
     </header>
