@@ -1,37 +1,38 @@
-# Changing Effective Date in VMS (Moving Date Forward in Time)
+# Change a Policy Start Date in VMS (Move Date Forward)
 
-Procedure for Processors to change a member's policy effective date to a later date in the Vantage Membership Service (VMS).
+This guide shows how to move a policy start date to a later date in VMS.
 
 ## Prerequisites
 
-* Effective dates must be the first of the month.
+* The new date must be the first day of the month.
 
-## Context
+## Before You Begin
 
 :::caution Important
-Customer Advocates (CAs) must refer to the RMO Workaround Pending Member Inquiries for On Off Marketplace procedure instead of using the steps below.
+Customer Advocates must use the *RMO Workaround Pending Member Inquiries for On Off Marketplace* guide instead.
 :::
 
-Use these steps to change a member's effective date to a later date in VMS.
+Use these steps to move a start date forward in VMS.
 
 ## Steps
 
-1. Open the Customer Service Inquiry panel.  
-   In the VMS menu bar, click **Processing > Customer Service**. Select 'Effective Date change' as the Inquiry Reason and enter the member's ID.
-2. Change the effective date for the Primary Insured and all Dependents.  
-   * Modify the Eligibility Coverage (medical and dental) effective date to the new date. This includes the Effective Date, Product Effective Date, and Original Effective Date (if applicable).
-   * Modify the Ancillary Coverage Info effective date to the new date.
-3. Update the effective dates for related records.  
-   * Modify the policy Broker Assignment effective date.
-   * Modify the active Funding Assignments effective date.
-   * Modify the Contacts effective date.
-   * Modify the Subsidy Maintenance effective date (if a record exists).
-4. Request new ID cards for non-HMO members.  
-   HMO member ID cards will be automatically generated after the PCP is updated.
-5. Finish the Customer Service Inquiry and send a confirmation letter.  
-   Click 'Finish Inquiry', select 'Closed on First Contact', and follow the RMO Workaround Creating Free Form Correspondence in CUI procedure.
-6. If an HMO policy, update the effective date on the member's providers using the RMO Changing a Provider procedure.
+1. Open the inquiry panel.  
+   In VMS, click **Processing > Customer Service**. Pick **Effective Date change** as the reason and enter the member ID.
+1. Update member start dates.  
+   * Change the **Eligibility Coverage** (health and dental) start date to the new date. Update Effective Date, Product Effective Date, and Original Effective Date.
+   * Change the **Ancillary Coverage Info** start date to the new date.
+1. Update related files.  
+   * Change the **Broker Assignment** start date.
+   * Change active **Funding Assignments** start dates.
+   * Change the **Contacts** start date.
+   * Update **Subsidy Maintenance** start dates, if present.
+1. Request new ID cards for non-HMO members.  
+   VMS creates HMO cards on its own after you update the PCP.
+1. Close the inquiry and send a letter.  
+   Click **Finish Inquiry**, pick **Closed on First Contact**, and follow the *RMO Workaround Creating Free Form Correspondence in CUI* guide.
+1. Update provider dates for HMO policies.  
+   Use the *RMO Changing a Provider* guide to update the date for each provider.
 
 ## Result
 
-The member's policy effective date is successfully moved forward in VMS across all relevant coverage and assignment records.
+The policy start date is now updated across all VMS files and coverage types.

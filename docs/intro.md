@@ -1,17 +1,22 @@
-# Jim Beebe's writing website
+# Welcome to My Writing Site
 
 ## Purpose
 
-This website showcases various skills and approaches to technical writing. Here you will find docs-as-code, structured topic-based documents, user-focused tasks, and audience-aware writing.
+This site shows my work as a technical writer. Here, you will find examples of:
 
-## Method
+* **Docs-as-code** work
+* **Topic-based** docs
+* **Task-based** user guides
+* **Clear, reader-focused** writing
 
-I built this website using [Docusaurus](https://docusaurus.io/), a modern static website generator. I am writing the documents in markdown and publishing through GitHub Pages.
+## Built With
 
-## Work in progress
+I built this site using [Docusaurus](https://docusaurus.io/), a tool for static sites. I write in Markdown and publish with GitHub Pages.
 
-This website is a work in progress. You will see development and change over time. Stop back often and check it out!
+## Work in Progress
 
-## Thanks
+This site is still growing. I add new work often, so check back soon to see what's new!
 
-Thanks for dropping in and taking a look.
+## Thanks for Visiting
+
+Thanks for stopping by! Take a look around and feel free to reach out.
