@@ -1,3 +1,9 @@
+---
+title: 'Jim Beebe's Writine Site'
+sidebar_label: 'Front page'
+sidebar_position: 1
+---
+
 # Welcome to My Writing Site
 
 ## Purpose

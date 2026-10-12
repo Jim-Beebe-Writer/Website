@@ -1,3 +1,11 @@
+---
+title: 'Change Plans in VMS'
+sidebar_label: 'Change Plans in VMS'
+sidebar_position: 2
+custom_edit_url: null
+keywords: [VMS, Vantage, policy, update, plan]
+---
+
 # Change Plans in Vantage Membership System
 
 ## Prerequisites
@@ -22,11 +30,15 @@ Use this guide for plans in IL, MT, NM, or OK.
 
 ## Steps
 
+### Setup
+
 1. In the VMS menu, select the icon to open a second window. Log into VMS there (**Window Two**).
 
    * **Note:** The main window is **Window One**.
 
    * **Important:** Switch windows only when told.
+
+### Find the member
 
 1. Switch to **Window One**.
 
@@ -35,6 +47,8 @@ Use this guide for plans in IL, MT, NM, or OK.
 1. Type the member ID and select **Do Search**.
 
 1. Select the member ID to open the member tree screen.
+
+### Open the member's coverage tree 
 
 1. Switch to **Window Two**.
 
@@ -49,6 +63,8 @@ Use this guide for plans in IL, MT, NM, or OK.
 1. Select **Accept** to see matching members.
 
 1. Under **Matching Members**, select the member ID. The tree view opens.
+
+### Cancel the existing coverage
 
 1. Right-click the coverage to replace.
 
@@ -68,6 +84,8 @@ Use this guide for plans in IL, MT, NM, or OK.
 
 1. In the Member Termination box, select **Change & Exit**.
 
+### Find the cancelled policy
+
 1. Switch to **Window One**.
 
 1. Set **Display InActive?** to **Yes**.
@@ -75,6 +93,8 @@ Use this guide for plans in IL, MT, NM, or OK.
 1. Select **Do Search**.
 
 1. Right-click the canceled policy and pick **View**.
+
+### Add the new coverage
 
 1. Switch to **Window Two**.
 
@@ -86,35 +106,39 @@ Use this guide for plans in IL, MT, NM, or OK.
 
 1. Select **Add** to open the Eligibility Coverage Add screen.
 
-1. Complete these fields:
+### Complete the Eligibility Coverage Add screen
 
-   1. **Effective Date**: Enter the new plan start date.
+1. In the Eligibility Coverage Add screen, complete these fields:
 
-   1. **Product Effective Date**: Set to match Effective Date.
+   * **Effective Date**: Enter the new plan start date.
 
-   1. **LOB**: Select the target LOB if not filled automatically.
+   * **Product Effective Date**: Set to match Effective Date.
 
-   1. **Original Effective Date**: Copy from old plan (check Window One).
+   * **LOB**: Select the target LOB if not filled automatically.
 
-   1. **Plan Strategy ID**: Enter the new Plan Strategy ID.
+   * **Original Effective Date**: Copy from old plan (check Window One).
 
-      * **Note:** If missing from the SR, see *Plan Strategy ID and Class of Contract Code - Overview*.
+   * **Plan Strategy ID**: Enter the new Plan Strategy ID.
 
-   1. **Bill Flag**: Copy from old plan (check Window One).
+      * **Note:** If the new Plan Strategy ID is missing from the SR, see *Plan Strategy ID and Class of Contract Code - Overview*.
 
-   1. **Coverage Code**: Copy from old plan (check Window One).
+   * **Bill Flag**: Copy from old plan (check Window One).
 
-   1. **COBRA Flag**: Keep as **No (N)**.
+   * **Coverage Code**: Copy from old plan (check Window One).
 
-   1. **COBRA A/R Type**: Keep as **Group (G)**.
+   * **COBRA Flag**: Keep as **No (N)**.
 
-   1. **Manual Enrollment**: Change to **Yes**.
+   * **COBRA A/R Type**: Keep as **Group (G)**.
+
+   * **Manual Enrollment**: Change to **Yes**.
 
 1. Select **Add and Exit**.
 
-1. If prompt asks to update dependents, keep **Yes** and select **Submit**.
+1. If a prompt asks to update dependents, keep **Yes** and select **Submit**.
 
 1. Set **Display InActive?** to **Yes** and select **Do Search**.
+
+### Open the Ancillary Coverage Info
 
 1. Switch to **Window One**.
 
@@ -134,6 +158,8 @@ Use this guide for plans in IL, MT, NM, or OK.
 
 1. Select **View**.
 
+### Start a new ancillary coverage record
+
 1. Switch to **Window Two**.
 
 1. Right-click the member name.
@@ -148,43 +174,43 @@ Use this guide for plans in IL, MT, NM, or OK.
 
 1. Fill out the **Coverage Ancillary Add** screen:
 
-   1. **LOB**: Pick the right LOB.
+   * **LOB**: Pick the right LOB.
 
-   1. **Effective Date**: Enter the start date.
+   * **Effective Date**: Enter the start date.
 
-   1. **Termination Date**: Type `12/31/9999`.
+   * **Termination Date**: Type `12/31/9999`.
 
-   1. **Case Number**: Enter member ID + date as `ymmdd` (for example `88776655440225`).
+   * **Case Number**: Enter member ID + date as `ymmdd` (for example `88776655440225`).
 
-   1. **Claims Investigation**: Leave blank.
+   * **Claims Investigation**: Leave blank.
 
-   1. **Pre-Existing End Date**: Leave blank.
+   * **Pre-Existing End Date**: Leave blank.
 
-   1. **Application Received Date**: Enter request date.
+   * **Application Received Date**: Enter request date.
 
-   1. **Application Signature**: Enter request date.
+   * **Application Signature**: Enter request date.
 
-   1. **Member Issue Date**: Enter today's date (`mm/dd/yyyy`).
+   * **Member Issue Date**: Enter today's date (`mm/dd/yyyy`).
 
-   1. **Conversion Switch Date**: Leave blank.
+   * **Conversion Switch Date**: Leave blank.
 
-   1. **Control Number**: Leave blank.
+   * **Control Number**: Leave blank.
 
-   1. **Application Type**: Pick **New (N)**.
+   * **Application Type**: Pick **New (N)**.
 
-   1. **External Business**: Copy from old plan (check Window One).
+   * **External Business**: Copy from old plan (check Window One).
 
-   1. **Source Type**: Copy from old plan (check Window One).
+   * **Source Type**: Copy from old plan (check Window One).
 
-   1. **External Ref#**: If External Business is Yes, copy from old plan.
+   * **External Ref#**: If External Business is Yes, copy from old plan.
 
-   1. **Proxy Sign Ind**: Copy from old plan.
+   * **Proxy Sign Ind**: Copy from old plan.
 
-   1. **Proxy Sign Date**: If Proxy Sign Ind is Yes, copy from old plan.
+   * **Proxy Sign Date**: If Proxy Sign Ind is Yes, copy from old plan.
 
-   1. **Market Type**: Copy from old plan.
+   * **Market Type**: Copy from old plan.
 
-   1. **Variant Code**: Match to the last 2 digits of the Contract Code:
+   * **Variant Code**: Match to the last 2 digits of the Contract Code:
 
 | Last Two Digits of Contract Code | Variant Code | 
 | ----- | ----- | 
@@ -196,25 +222,29 @@ Use this guide for plans in IL, MT, NM, or OK.
 | 05 | 87% AV Silver CSR | 
 | 06 | 94% AV Silver CSR | 
 
-   1. **Class of Contract Code**: Enter the 16-digit code for the new plan.
+   * **Class of Contract Code**: Enter the 16-digit code for the new plan.
 
-   1. **Other Dental QHP**: Copy from old plan.
+   * **Other Dental QHP**: Copy from old plan.
 
-   1. **QHP Sign Date**: Copy from old plan.
+   * **QHP Sign Date**: Copy from old plan.
 
-   1. **Carrier**: Copy from old plan.
+   * **Carrier**: Copy from old plan.
 
-   1. **Disability Affecting Communication**: Copy from old plan.
+   * **Disability Affecting Communication**: Copy from old plan.
 
-   1. **Communication Materials Needed**: Copy from old plan.
+   * **Communication Materials Needed**: Copy from old plan.
 
-   1. **Policy Should be Mailed**: Copy from old plan.
+   * **Policy Should be Mailed**: Copy from old plan.
 
 1. Select **Add and Exit**.
 
 1. Set **Display InActive?** to **Yes** and select **Do Search**.
 
-1. Repeat steps 35 through 50 for each dependent on the policy.
+### Complete ancillary coverage for dependents
+
+1. Repeat the steps in **Start a new ancillary coverage record** for each dependent on the policy.
+
+### Check for active rate records
 
 1. Right-click the member name.
 
@@ -228,7 +258,9 @@ Use this guide for plans in IL, MT, NM, or OK.
 
 1. Set **Display InActive?** to **Yes** and select **Do Search**.
 
-1. Repeat steps 52 through 56 for each dependent.
+1. Repeat the steps in this sub-section for each dependent.
+
+### Update the funding assignment, subsidy, and broker assignment
 
 1. Right-click the member name.
 
@@ -258,13 +290,15 @@ Use this guide for plans in IL, MT, NM, or OK.
 
 1. Fix broker assignments (if applicable):
 
-   1. Under **Broker Assignments**, look for ended brokers. If none, skip to step 64.
+   1. Under **Broker Assignments**, look for ended brokers. If none, skip to **Request a policy kit**.
 
    1. Right-click each record and pick **Change**.
 
    1. Set **Termination Date** to `12/31/9999`.
 
    1. Select **Change & Exit**.
+
+### Request a policy kit
 
 1. In **Member Search**, select **Close All** (select **No** in the prompt).
 
@@ -294,9 +328,13 @@ Use this guide for plans in IL, MT, NM, or OK.
 
    * **Note:** Don't type in the **Message** field.
 
+### Finish the policy kit order
+
 1. Select **Accept & Order**.
 
 1. Close the order box.
+
+### Finish the inquiry
 
 1. Select the left yellow double arrows (`>>`) to open the Inquiry panel.
 
