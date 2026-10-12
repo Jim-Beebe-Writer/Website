@@ -1,6 +1,6 @@
 ---
-title: 'Jim Beebe's Writine Site'
-sidebar_label: 'Front page'
+title: "Jim Beebe's Writing Site"
+sidebar_label: "Front page"
 sidebar_position: 1
 ---
 
