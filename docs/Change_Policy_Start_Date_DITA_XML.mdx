@@ -1,0 +1,66 @@
+---
+title: "DITA for Change a Policy Start Date"
+sidebar_label: "DITA for Change a Policy Start Date"
+sidebar_position: 4
+custom_edit_url:
+keywords: [DITA, XML]
+---
+
+'''xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="change_policy_start_date_vms">
+    <title>Change a Policy Start Date in VMS (Move Date Forward)</title>
+    <shortdesc>This guide shows how to move a policy start date to a later date in VMS.</shortdesc>
+    <taskbody>
+        <prereq>
+            <p>The new date must be the first day of the month.</p>
+        </prereq>
+        <context>
+            <note type="caution">Customer Advocates must use the <em>RMO Workaround Pending Member Inquiries for On Off Marketplace</em> guide instead.</note>
+            <p>Use these steps to move a start date forward in VMS.</p>
+        </context>
+        <steps>
+            <step>
+                <cmd>Open the inquiry panel.</cmd>
+                <info>In VMS, click <uicontrol>Processing > Customer Service</uicontrol>. Pick <uicontrol>Effective Date change</uicontrol> as the reason and enter the member ID.</info>
+            </step>
+            <step>
+                <cmd>Update member start dates.</cmd>
+                <info>
+                    <ul>
+                        <li>Change the <uicontrol>Eligibility Coverage</uicontrol> (health and dental) start date to the new date. Update Effective Date, Product Effective Date, and Original Effective Date.</li>
+                        <li>Change the <uicontrol>Ancillary Coverage Info</uicontrol> start date to the new date.</li>
+                    </ul>
+                </info>
+            </step>
+            <step>
+                <cmd>Update related files.</cmd>
+                <info>
+                    <ul>
+                        <li>Change the <uicontrol>Broker Assignment</uicontrol> start date.</li>
+                        <li>Change active <uicontrol>Funding Assignments</uicontrol> start dates.</li>
+                        <li>Change the <uicontrol>Contacts</uicontrol> start date.</li>
+                        <li>Update <uicontrol>Subsidy Maintenance</uicontrol> start dates, if present.</li>
+                    </ul>
+                </info>
+            </step>
+            <step>
+                <cmd>Request new ID cards for non-HMO members.</cmd>
+                <info>VMS creates HMO cards on its own after you update the PCP.</info>
+            </step>
+            <step>
+                <cmd>Close the inquiry and send a letter.</cmd>
+                <info>Click <uicontrol>Finish Inquiry</uicontrol>, pick <uicontrol>Closed on First Contact</uicontrol>, and follow the <em>RMO Workaround Creating Free Form Correspondence in CUI</em> guide.</info>
+            </step>
+            <step>
+                <cmd>Update provider dates for HMO policies.</cmd>
+                <info>Use the <em>RMO Changing a Provider</em> guide to update the date for each provider.</info>
+            </step>
+        </steps>
+        <result>
+            <p>The policy start date is now updated across all VMS files and coverage types [cite: 1].</p>
+        </result>
+    </taskbody>
+</task>
+'''

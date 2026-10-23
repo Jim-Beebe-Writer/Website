@@ -12,3 +12,13 @@ Vale:
   label: Vale
   permalink: /tags/Vale
   description: Discussions of style linting with Vale.
+
+DITA:
+  label: DITA
+  permalink: /tags/DITA
+  description: Content management and authoring with the Darwin Information Typing Architecture.
+
+XML:
+  label: XML
+  permalink: /tags/XML
+  description: Articles on and examples of XML and related technologies.

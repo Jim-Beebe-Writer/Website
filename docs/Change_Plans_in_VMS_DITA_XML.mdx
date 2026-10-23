@@ -1,0 +1,365 @@
+---
+title: "DITA for Change Plans in VMS"
+sidebar_label: "DITA for Change Plans in VMS"
+sidebar_position: 5
+custom_edit_url:
+keywords: [DITA, XML]
+---
+
+'''xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="change_plans_in_vms">
+    <title>Change Plans in Vantage Membership System</title>
+    <shortdesc>Guide on how to change plans in VMS under set rules for members in IL, MT, NM, or OK.</shortdesc>
+    <taskbody>
+        <prereq>
+            <p>This guide uses two VMS windows. You must know how to switch between open windows in Windows.</p>
+        </prereq>
+        <context>
+            <p>Members can ask to change plans under set rules. See <i>Processing Plan Change Guideline On or Off Marketplace</i> for details on when changes are allowed.</p>
+            <note type="caution">
+                <p><b>Important (Customer Advocates)</b></p>
+                <p><b>Don't use these steps.</b></p>
+                <ul>
+                    <li>If an off-Exchange member calls to change a plan, tell them to apply via the Retail Shopping Cart (RSC).</li>
+                    <li>If they want a paper form, direct them to their state site (www.bcbsxx.com) to download one.</li>
+                    <li>If they insist you send a form, create a Dashboard Service Request (SR) task for ICSS (queue UHUENRO).</li>
+                </ul>
+            </note>
+            <note type="caution">
+                <p><b>Important (Processors)</b></p>
+                <p><b>Don't use these steps for Texas plans.</b> Reroute Texas requests to queue U312344.</p>
+            </note>
+            <note type="other">
+                <p><b>Processors</b></p>
+                <p>Use this guide for plans in IL, MT, NM, or OK.</p>
+            </note>
+        </context>
+        <steps>
+            <step>
+                <cmd>Setup</cmd>
+                <substeps>
+                    <substep>
+                        <cmd>In the VMS menu, select the icon to open a second window. Log into VMS there (<b>Window Two</b>).</cmd>
+                        <info>
+                            <ul>
+                                <li><b>Note:</b> The main window is <b>Window One</b>.</li>
+                                <li><b>Important:</b> Switch windows only when told.</li>
+                            </ul>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Find the member</cmd>
+                <substeps>
+                    <substep><cmd>Switch to <b>Window One</b>.</cmd></substep>
+                    <substep><cmd>In the VMS menu, select <b>Profiles &gt; Members</b>.</cmd></substep>
+                    <substep><cmd>Type the member ID and select <b>Do Search</b>.</cmd></substep>
+                    <substep><cmd>Select the member ID to open the member tree screen.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Open the member's coverage tree</cmd>
+                <substeps>
+                    <substep><cmd>Switch to <b>Window Two</b>.</cmd></substep>
+                    <substep><cmd>In the VMS menu, select <b>Processing &gt; Customer Service</b>.</cmd></substep>
+                    <substep>
+                        <cmd>In <b>Inquiry Reason</b>, pick <b>Plan Change (Downgrade)</b>.</cmd>
+                        <info><b>Note:</b> Pick this even if coverage goes up.</info>
+                    </substep>
+                    <substep><cmd>In <b>Entity ID</b>, type the member ID.</cmd></substep>
+                    <substep><cmd>Select <b>Accept</b> to see matching members.</cmd></substep>
+                    <substep><cmd>Under <b>Matching Members</b>, select the member ID. The tree view opens.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Cancel the existing coverage</cmd>
+                <substeps>
+                    <substep><cmd>Right-click the coverage to replace.</cmd></substep>
+                    <substep><cmd>Select <b>Cancel</b>. The Member Termination window opens.</cmd></substep>
+                    <substep>
+                        <cmd>In <b>Termination Date</b>, enter the day before the new start date.</cmd>
+                        <info><b>Note:</b> If retroactive, use the old plan's start date.</info>
+                    </substep>
+                    <substep><cmd>Select the glass icon next to <b>Term Reason Code</b>.</cmd></substep>
+                    <substep><cmd>In the search box, select <b>Do Search</b>.</cmd></substep>
+                    <substep><cmd>Pick a reason from the list.</cmd></substep>
+                    <substep><cmd>Select <b>Return ID</b>.</cmd></substep>
+                    <substep><cmd>In the Member Termination box, select <b>Change &amp; Exit</b>.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Find the cancelled policy</cmd>
+                <substeps>
+                    <substep><cmd>Switch to <b>Window One</b>.</cmd></substep>
+                    <substep><cmd>Set <b>Display InActive?</b> to <b>Yes</b>.</cmd></substep>
+                    <substep><cmd>Select <b>Do Search</b>.</cmd></substep>
+                    <substep><cmd>Right-click the canceled policy and pick <b>View</b>.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Add the new coverage</cmd>
+                <substeps>
+                    <substep><cmd>Switch to <b>Window Two</b>.</cmd></substep>
+                    <substep><cmd>Set <b>Display InActive?</b> to <b>Yes</b>.</cmd></substep>
+                    <substep><cmd>Select <b>Do Search</b>.</cmd></substep>
+                    <substep><cmd>In the tree, right-click the Line of Business (LOB) to add.</cmd></substep>
+                    <substep><cmd>Select <b>Add</b> to open the Eligibility Coverage Add screen.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Complete the Eligibility Coverage Add screen</cmd>
+                <substeps>
+                    <substep>
+                        <cmd>In the Eligibility Coverage Add screen, complete these fields:</cmd>
+                        <info>
+                            <ul>
+                                <li><b>Effective Date</b>: Enter the new plan start date.</li>
+                                <li><b>Product Effective Date</b>: Set to match Effective Date.</li>
+                                <li><b>LOB</b>: Select the target LOB if not filled automatically.</li>
+                                <li><b>Original Effective Date</b>: Copy from old plan (check Window One).</li>
+                                <li><b>Plan Strategy ID</b>: Enter the new Plan Strategy ID. <p><b>Note:</b> If the new Plan Strategy ID is missing from the SR, see <i>Plan Strategy ID and Class of Contract Code - Overview</i>.</p></li>
+                                <li><b>Bill Flag</b>: Copy from old plan (check Window One).</li>
+                                <li><b>Coverage Code</b>: Copy from old plan (check Window One).</li>
+                                <li><b>COBRA Flag</b>: Keep as <b>No (N)</b>.</li>
+                                <li><b>COBRA A/R Type</b>: Keep as <b>Group (G)</b>.</li>
+                                <li><b>Manual Enrollment</b>: Change to <b>Yes</b>.</li>
+                            </ul>
+                        </info>
+                    </substep>
+                    <substep><cmd>Select <b>Add and Exit</b>.</cmd></substep>
+                    <substep><cmd>If a prompt asks to update dependents, keep <b>Yes</b> and select <b>Submit</b>.</cmd></substep>
+                    <substep><cmd>Set <b>Display InActive?</b> to <b>Yes</b> and select <b>Do Search</b>.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Open the Ancillary Coverage Info</cmd>
+                <substeps>
+                    <substep><cmd>Switch to <b>Window One</b>.</cmd></substep>
+                    <substep><cmd>In the Eligibility Coverage View box, select <b>Exit</b>.</cmd></substep>
+                    <substep><cmd>Set <b>Display InActive?</b> to <b>Yes</b>.</cmd></substep>
+                    <substep><cmd>Select <b>Do Search</b>.</cmd></substep>
+                    <substep><cmd>Right-click the member name.</cmd></substep>
+                    <substep><cmd>Hover over <b>Drill Down</b>.</cmd></substep>
+                    <substep><cmd>Pick <b>Ancillary Coverage Info</b>.</cmd></substep>
+                    <substep><cmd>Right-click the ended record.</cmd></substep>
+                    <substep><cmd>Select <b>View</b>.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Start a new ancillary coverage record</cmd>
+                <substeps>
+                    <substep><cmd>Switch to <b>Window Two</b>.</cmd></substep>
+                    <substep><cmd>Right-click the member name.</cmd></substep>
+                    <substep><cmd>Hover over <b>Drill Down</b>.</cmd></substep>
+                    <substep><cmd>Pick <b>Ancillary Coverage Info</b>.</cmd></substep>
+                    <substep><cmd>Right-click <b>Ancillary Coverage Records</b>.</cmd></substep>
+                    <substep><cmd>Select <b>Add</b>.</cmd></substep>
+                    <substep>
+                        <cmd>Fill out the <b>Coverage Ancillary Add</b> screen:</cmd>
+                        <info>
+                            <ul>
+                                <li><b>LOB</b>: Pick the right LOB.</li>
+                                <li><b>Effective Date</b>: Enter the start date.</li>
+                                <li><b>Termination Date</b>: Type <tt>12/31/9999</tt>.</li>
+                                <li><b>Case Number</b>: Enter member ID + date as <tt>ymmdd</tt> (for example <tt>88776655440225</tt>).</li>
+                                <li><b>Claims Investigation</b>: Leave blank.</li>
+                                <li><b>Pre-Existing End Date</b>: Leave blank.</li>
+                                <li><b>Application Received Date</b>: Enter request date.</li>
+                                <li><b>Application Signature</b>: Enter request date.</li>
+                                <li><b>Member Issue Date</b>: Enter today's date (<tt>mm/dd/yyyy</tt>).</li>
+                                <li><b>Conversion Switch Date</b>: Leave blank.</li>
+                                <li><b>Control Number</b>: Leave blank.</li>
+                                <li><b>Application Type</b>: Pick <b>New (N)</b>.</li>
+                                <li><b>External Business</b>: Copy from old plan (check Window One).</li>
+                                <li><b>Source Type</b>: Copy from old plan (check Window One).</li>
+                                <li><b>External Ref#</b>: If External Business is Yes, copy from old plan.</li>
+                                <li><b>Proxy Sign Ind</b>: Copy from old plan.</li>
+                                <li><b>Proxy Sign Date</b>: If Proxy Sign Ind is Yes, copy from old plan.</li>
+                                <li><b>Market Type</b>: Copy from old plan.</li>
+                                <li><b>Variant Code</b>: Match to the last 2 digits of the Contract Code:
+                                    <p>
+                                        <table>
+                                            <tgroup cols="2">
+                                                <thead>
+                                                    <row>
+                                                        <entry>Last Two Digits of Contract Code</entry>
+                                                        <entry>Variant Code</entry>
+                                                    </row>
+                                                </thead>
+                                                <tbody>
+                                                    <row><entry>00</entry><entry>Non-Exchange variant</entry></row>
+                                                    <row><entry>01</entry><entry>Exchange variant (no CSR)</entry></row>
+                                                    <row><entry>02</entry><entry>Open to Native Americans under 300% FPL</entry></row>
+                                                    <row><entry>03</entry><entry>Open to Native Americans over 300% FPL</entry></row>
+                                                    <row><entry>04</entry><entry>73% AV Silver CSR</entry></row>
+                                                    <row><entry>05</entry><entry>87% AV Silver CSR</entry></row>
+                                                    <row><entry>06</entry><entry>94% AV Silver CSR</entry></row>
+                                                </tbody>
+                                            </tgroup>
+                                        </table>
+                                    </p>
+                                </li>
+                                <li><b>Class of Contract Code</b>: Enter the 16-digit code for the new plan.</li>
+                                <li><b>Other Dental QHP</b>: Copy from old plan.</li>
+                                <li><b>QHP Sign Date</b>: Copy from old plan.</li>
+                                <li><b>Carrier</b>: Copy from old plan.</li>
+                                <li><b>Disability Affecting Communication</b>: Copy from old plan.</li>
+                                <li><b>Communication Materials Needed</b>: Copy from old plan.</li>
+                                <li><b>Policy Should be Mailed</b>: Copy from old plan.</li>
+                            </ul>
+                        </info>
+                    </substep>
+                    <substep><cmd>Select <b>Add and Exit</b>.</cmd></substep>
+                    <substep><cmd>Set <b>Display InActive?</b> to <b>Yes</b> and select <b>Do Search</b>.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Complete ancillary coverage for dependents</cmd>
+                <info>Repeat the steps in <b>Start a new ancillary coverage record</b> for each dependent on the policy.</info>
+            </step>
+            <step>
+                <cmd>Check for active rate records</cmd>
+                <substeps>
+                    <substep><cmd>Right-click the member name.</cmd></substep>
+                    <substep><cmd>Hover over <b>Drill Down</b>.</cmd></substep>
+                    <substep><cmd>Pick <b>Ancillary Rate Info</b>.</cmd></substep>
+                    <substep>
+                        <cmd>Check that an active rate record shows.</cmd>
+                        <info><b>Note:</b> If missing, email <i>Retail Market Operations - Rate Administration</i> with the ID and LOB.</info>
+                    </substep>
+                    <substep><cmd>Set <b>Display InActive?</b> to <b>Yes</b> and select <b>Do Search</b>.</cmd></substep>
+                    <substep><cmd>Repeat the steps in this sub-section for each dependent.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Update the funding assignment, subsidy, and broker assignment</cmd>
+                <substeps>
+                    <substep><cmd>Right-click the member name.</cmd></substep>
+                    <substep><cmd>Hover over <b>Drill Down</b>.</cmd></substep>
+                    <substep><cmd>Select <b>All Details</b>.</cmd></substep>
+                    <substep>
+                        <cmd>Fix the funding assignment:</cmd>
+                        <choices>
+                            <choice>Under <b>Member Funding Assignments</b>, find the ended assignment.</choice>
+                            <choice>Right-click it and pick <b>Change</b>.</choice>
+                            <choice>In <b>Termination Date</b>, type <tt>12/31/9999</tt>.</choice>
+                            <choice>Select <b>Change &amp; Exit</b>.</choice>
+                        </choices>
+                    </substep>
+                    <substep>
+                        <cmd>Fix the subsidy (if applicable):</cmd>
+                        <choices>
+                            <choice>Under <b>Subsidy Maintenance</b>, find the ended subsidy record. If none, skip to step 63.</choice>
+                            <choice>Right-click it and pick <b>Change</b>.</choice>
+                            <choice>Set <b>Subsidy Termination Date</b> to <tt>12/31/9999</tt>.</choice>
+                            <choice>Select <b>Change &amp; Exit</b>.</choice>
+                        </choices>
+                    </substep>
+                    <substep>
+                        <cmd>Fix broker assignments (if applicable):</cmd>
+                        <choices>
+                            <choice>Under <b>Broker Assignments</b>, look for ended brokers. If none, skip to <b>Request a policy kit</b>.</choice>
+                            <choice>Right-click each record and pick <b>Change</b>.</choice>
+                            <choice>Set <b>Termination Date</b> to <tt>12/31/9999</tt>.</choice>
+                            <choice>Select <b>Change &amp; Exit</b>.</choice>
+                        </choices>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Request a policy kit</cmd>
+                <substeps>
+                    <substep><cmd>In <b>Member Search</b>, select <b>Close All</b> (select <b>No</b> in the prompt).</cmd></substep>
+                    <substep>
+                        <cmd>Request a Policy Kit:</cmd>
+                        <info>
+                            <ul>
+                                <li>Select the ID card icon in the member row.</li>
+                                <li>Fill out the form as shown below:</li>
+                            </ul>
+                            <table>
+                                <tgroup cols="2">
+                                    <thead>
+                                        <row>
+                                            <entry>Field</entry>
+                                            <entry>Action</entry>
+                                        </row>
+                                    </thead>
+                                    <tbody>
+                                        <row><entry>Request For</entry><entry>Set to Member</entry></row>
+                                        <row><entry>ID#</entry><entry>Member ID</entry></row>
+                                        <row><entry>Members</entry><entry>Primary Insured</entry></row>
+                                        <row><entry>Group ID</entry><entry>Member Group ID</entry></row>
+                                        <row><entry>Type</entry><entry>Plan Change/Initial Kit (4)</entry></row>
+                                        <row><entry># of Items</entry><entry>Type 1</entry></row>
+                                        <row><entry>Provider Effective Date (HMO)</entry><entry>Pick latest date</entry></row>
+                                        <row><entry>Case Number</entry><entry>Select new coverage case number</entry></row>
+                                        <row><entry>Address Source</entry><entry>Primary Mailing address</entry></row>
+                                        <row><entry>Order For</entry><entry>M-Member Only</entry></row>
+                                        <row><entry>Names on Card</entry><entry>M-Member Only</entry></row>
+                                        <row><entry>Card Coverage Date</entry><entry>Active coverage start date</entry></row>
+                                        <row><entry>If No Address Then Send to</entry><entry>Leave blank</entry></row>
+                                        <row><entry>Card Format</entry><entry>Blue Cross Blue Shield</entry></row>
+                                        <row><entry>Request fields</entry><entry>Enter name and address if blank</entry></row>
+                                    </tbody>
+                                </tgroup>
+                            </table>
+                            <p><b>Note:</b> Don't type in the <b>Message</b> field.</p>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Finish the policy kit order</cmd>
+                <substeps>
+                    <substep><cmd>Select <b>Accept &amp; Order</b>.</cmd></substep>
+                    <substep><cmd>Close the order box.</cmd></substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Finish the inquiry</cmd>
+                <substeps>
+                    <substep><cmd>Select the left yellow double arrows (<tt>&gt;&gt;</tt>) to open the Inquiry panel.</cmd></substep>
+                    <substep><cmd>Select <b>Finish Inquiry</b>.</cmd></substep>
+                    <substep><cmd>Pick <b>Closed on First Contact</b>.</cmd></substep>
+                    <substep><cmd>Pick <b>Send to Subscriber</b> and check the box next to the member ID.</cmd></substep>
+                    <substep><cmd>In <b>Comment</b>, enter the SR number.</cmd></substep>
+                    <substep><cmd>Follow the <i>RMO Workaround Creating Free Form Correspondence in CUI</i> guide to send a letter.</cmd></substep>
+                    <substep><cmd>Follow the <i>RMO Requesting ID Cards in VUI</i> guide to order cards.</cmd></substep>
+                    <substep>
+                        <cmd>If retroactive, inform Claims:</cmd>
+                        <choices>
+                            <choice>In the SR, create a new task.</choice>
+                            <choice>In <b>Comments</b>, type: <tt>Re-examine claims due to plan change</tt>, the member ID, and start date.</choice>
+                            <choice>In <b>Activity Code 1</b>, type <tt>PLC</tt>.</choice>
+                            <choice>In <b>Employee ID</b>, type <tt>UHUBENP</tt>.</choice>
+                            <choice>Select <b>Save</b>.</choice>
+                        </choices>
+                    </substep>
+                    <substep>
+                        <cmd>If retroactive, inform FinOps:</cmd>
+                        <choices>
+                            <choice>In the SR, create a new task.</choice>
+                            <choice>In <b>Comments</b>, type: <tt>Reinvoice due to plan change</tt>, the member ID, and start date.</choice>
+                            <choice>In <b>Activity Code 1</b>, type <tt>PLC</tt>.</choice>
+                            <choice>In <b>Employee ID</b>, type <tt>UFINOPS</tt>.</choice>
+                            <choice>Select <b>Save</b>.</choice>
+                        </choices>
+                    </substep>
+                    <substep><cmd>In the SR, mark the plan change task as <b>Done</b>.</cmd></substep>
+                </substeps>
+            </step>
+        </steps>
+        <postreq>
+            <p>Review these documents for further help:</p>
+            <ul>
+                <li><i>QHP Plan Strategy ID and Class of Contract Code - Overview</i></li>
+                <li><i>Processing Plan Change Guideline for On or Off the Marketplace</i></li>
+            </ul>
+        </postreq>
+    </taskbody>
+</task>
+'''
